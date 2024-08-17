@@ -1,5 +1,8 @@
 from flask import Flask, request
 from flask_cors import CORS
+from db import DBEngine
+
+db = DBEngine("test")
 
 app = Flask(__name__)
 CORS (app)
@@ -64,12 +67,14 @@ def receta():
 
     print("Parametro de la peticion:", keyword)
 
-    return [
-        Recipe().data(),
-        Recipe().data(),
-        Recipe().data()
-    ]
+    return list(db.find("recipes").values())
 
+@app.route("/recipes", methods=["POST"])
+def insert_recipe():
+    data = request.json
+    db.insert("recipes", data)
+    
+    return {"status": "ok"}
 
 if __name__ == "__main__":
     app.run("0.0.0.0", 5002)

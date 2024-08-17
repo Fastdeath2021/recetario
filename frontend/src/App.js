@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
 import { getRecipes } from "./recipes";
-import image from "./images/empanadas-pollo-jugosas.jpg";
+import image from "./images/empanadas-pollo-jugosas.jcpg";
 
 class Recipe extends React.Component {
   constructor(props) {
