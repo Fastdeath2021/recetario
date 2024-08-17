@@ -298,3 +298,10 @@ p {
   font-size: 1.2em;
   margin: 20px;
 }
+
+.add-recipe {
+  margin:50px ;
+  cursor:pointer;
+  padding: 15px 50px;
+  
+}

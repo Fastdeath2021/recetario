@@ -1,56 +1,51 @@
 {
-    "f274e3750dfc419195622fa5dbf96ca8": {
-        "portions": 1,
-        "name": "Empanadas de Pollo",
-        "cook_time": 10,
-        "procedure": "amasar rellenar y fritar",
-        "baseIngredients": [
-            {
-                "name": "harina",
-                "quantity": 500,
-                "unit": "gr"
-            },
-            {
-                "name": "pollo",
-                "quantity": 250,
-                "unit": "gr"
-            }
-        ]
-    },
-    "8b778e8739d343418a750a11d14d43fb": {
-        "portions": 1,
-        "name": "Empanadas de Pollo",
-        "cook_time": 10,
-        "procedure": "amasar rellenar y fritar",
-        "baseIngredients": [
-            {
-                "name": "harina",
-                "quantity": 500,
-                "unit": "gr"
-            },
-            {
-                "name": "pollo",
-                "quantity": 250,
-                "unit": "gr"
-            }
-        ]
-    },
-    "6d51684deeed47af8a0546585c75d17e": {
-        "portions": 1,
-        "name": "Empanadas de Pollo",
-        "cook_time": 10,
-        "procedure": "amasar rellenar y fritar",
-        "baseIngredients": [
-            {
-                "name": "harina",
-                "quantity": 500,
-                "unit": "gr"
-            },
-            {
-                "name": "pollo",
-                "quantity": 250,
-                "unit": "gr"
-            }
-        ]
-    }
+  "8b778e8739d343418a750a11d14d43fb": {
+    "portions": 1,
+    "name": "Empanadas de Pollo",
+    "cook_time": 10,
+    "procedure": "amasar rellenar y fritar",
+    "baseIngredients": [
+      {
+        "name": "harina",
+        "quantity": 500,
+        "unit": "gr"
+      },
+      {
+        "name": "pollo",
+        "quantity": 250,
+        "unit": "gr"
+      }
+    ]
+  },
+  "8f2dad8562434f628aa7a7d0ced8095a": {
+    "id": "8f2dad8562434f628aa7a7d0ced8095a",
+    "portions": "5",
+    "name": "dumplings de gato",
+    "cook_time": "20",
+    "procedure": "no me lo se pero bueno",
+    "baseIngredients": [
+      {
+        "name": "harina",
+        "quantity": "300",
+        "unit": "gr"
+      },
+      {
+        "name": "carne de gato",
+        "quantity": "500",
+        "unit": "gr"
+      }
+    ],
+    "calculatedIngredients": [
+      {
+        "name": "harina",
+        "quantity": "300",
+        "unit": "gr"
+      },
+      {
+        "name": "carne de gato",
+        "quantity": "500",
+        "unit": "gr"
+      }
+    ]
+  }
 }

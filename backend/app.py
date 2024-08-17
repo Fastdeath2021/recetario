@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from db import DBEngine
 
@@ -72,9 +72,26 @@ def receta():
 @app.route("/recipes", methods=["POST"])
 def insert_recipe():
     data = request.json
-    db.insert("recipes", data)
+    recipe_id = None
+    if data.get("id"):
+        recipe_id = data.get("id")
+        query = {"id": data.get("id")}
+        db.update("recipes", query, data)
+    else:  
+        recipe_id = db.insert("recipes", data)
     
-    return {"status": "ok"}
+    return {"recipe_id": recipe_id}
+
+@app.route("/recipes", methods=["DELETE"])
+def delete_recipe():
+    recipe_id = request.args.get("id")
+    if recipe_id: 
+        db.delete("recipes", {"id": recipe_id})
+        return jsonify(status="ok"), 200
+    else:
+        return jsonify(error="noid"), 500
+
+
 
 if __name__ == "__main__":
     app.run("0.0.0.0", 5002)

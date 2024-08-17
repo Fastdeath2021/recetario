@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { Recipe, Search } from "./App";
+import { Search } from "./Search";
 import reportWebVitals from "./reportWebVitals";
+import "./App.css";
+
 
 class Main extends React.Component {
   constructor(props) {

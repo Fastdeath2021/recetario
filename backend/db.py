@@ -18,7 +18,7 @@ class DBEngine:
         obj_id= uuid.uuid4().hex
         doc_data[obj_id]= data
         with open(f"{self.db_path}/{document}.json","w+") as document_file:
-            document_file.write(json.dumps(doc_data))
+            document_file.write(json.dumps(doc_data, indent=2))
         return obj_id
 
     def find(self, document, query=None):
@@ -27,6 +27,8 @@ class DBEngine:
             with open(f"{self.db_path}/{document}.json","r") as document_file:
                 doc_data= json.loads(document_file.read())  
         if not query :
+            for key in doc_data.keys():
+                doc_data[key].update({"id":key})
             return doc_data   
         obj_id=query.get("id")
         return doc_data.get(obj_id)
@@ -40,13 +42,8 @@ class DBEngine:
         obj_id= query.get("id")
         doc_data[obj_id].update(data)
         with open(f"{self.db_path}/{document}.json","w+") as document_file:
-            document_file.write(json.dumps(doc_data))
+            document_file.write(json.dumps(doc_data, indent=2))
     
-
-
-
-
-
 
     def delete(self, document, query):
         doc_data= {}
@@ -56,5 +53,5 @@ class DBEngine:
         obj_id= query.get("id")
         del doc_data[obj_id]
         with open(f"{self.db_path}/{document}.json","w+") as document_file:
-            document_file.write(json.dumps(doc_data))
+            document_file.write(json.dumps(doc_data, indent=2))
         
