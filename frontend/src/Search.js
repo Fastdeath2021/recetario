@@ -37,13 +37,13 @@ class Search extends React.Component {
         };
     }
 
-    async loadRecipes(keyword) {
-        let recipes = await getRecipes(keyword);
+    async loadRecipes() {
+        let recipes = await getRecipes(this.state.input);
         this.setState(() => ({ recipes: recipes }));
     }
 
     updateInput(keyword) {
-        this.loadRecipes(keyword);
+        this.setState((p)=>({input: keyword}))
     }
 
     render() {
@@ -61,7 +61,15 @@ class Search extends React.Component {
                 </div>
                 <input
                     value={this.state.input}
-                    onChange={(e) => this.updateInput(e.target.value)}
+                    onChange={(e) =>{
+                            this.updateInput(e.target.value);
+                        }
+                    }
+                    onKeyDown={(e) => {
+                        if (e.key == "Enter") {
+                            this.setState((p) => ({recipes: null}))
+                        }
+                    }}  
                     placeholder="Que receta buscas hoy?"
                 ></input>
                 <div className="categorias">

@@ -1,0 +1,98 @@
+.ingredient-row {
+    
+}
+
+.ingredient-row td {
+    width: auto;
+
+
+}
+
+.ingredient-row input, .portions-input {
+    margin: 0%;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 50px;
+    border-radius: 8px;
+    text-align: center;
+    outline: none;
+    border: none;
+}
+.portions-input {
+    margin-left: 20px;
+}
+.ingredient-name {
+    width: 150px !important;
+}
+
+.input-unit {
+    width: 15px !important;
+}
+
+.ingredient-row input:focus, .portions-input:focus {
+    border: 2px solid#000;
+    
+}
+
+.preparacion textarea {
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-size: 15px;
+
+}
+
+
+.edit-recipe-name {
+    padding: 5px;
+    margin: 5px;
+    border-radius: 6px;
+    font-size: 22px;
+    font-weight: bold;
+    border: 2px solid #d9d9d9
+}
+
+.edit-cook-time {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 2px solid #d9d9d9;
+    width: 40px;
+    text-align: center;
+}
+
+.icon-clock.edit {
+    mask-position: center;
+
+}
+
+.edit-buttons {
+    padding: 5px 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #50507b;
+    color: white;
+    font-size: 16px;
+    font-weight: bolder;
+    cursor: pointer;
+
+
+}
+
+.add {
+margin-top: 15px;
+
+}
+
+
+.edit-buttons:hover {
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.5);
+
+
+}
+
+.save {
+margin-top: 50px;
+
+}

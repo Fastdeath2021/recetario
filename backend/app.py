@@ -67,6 +67,21 @@ def receta():
 
     print("Parametro de la peticion:", keyword)
 
+    if keyword == "undefined" or keyword == "null":
+        keyword = None
+
+    if keyword:
+        all_recipes = list(db.find("recipes").values())
+        recipes= []
+        for recipe in all_recipes:
+            if keyword.lower() in recipe.get("name").lower():
+                recipes.append(recipe)
+                continue
+            if any ([keyword.lower() in ingredient.get("name") for ingredient in recipe.get("baseIngredients")]):
+                recipes.append(recipe)
+                continue
+        return recipes  
+
     return list(db.find("recipes").values())
 
 @app.route("/recipes", methods=["POST"])

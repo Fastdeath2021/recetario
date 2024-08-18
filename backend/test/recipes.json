@@ -17,35 +17,54 @@
       }
     ]
   },
-  "8f2dad8562434f628aa7a7d0ced8095a": {
-    "id": "8f2dad8562434f628aa7a7d0ced8095a",
-    "portions": "5",
-    "name": "dumplings de gato",
-    "cook_time": "20",
-    "procedure": "no me lo se pero bueno",
+  "acc4b131cc424e6595ca5111d2b813b6": {
+    "id": "acc4b131cc424e6595ca5111d2b813b6",
+    "portions": 0,
+    "name": "Pasticho veneco",
+    "cook_time": "120",
+    "procedure": "procedimiento jeje iadiuadhiuadhasdj",
     "baseIngredients": [
       {
-        "name": "harina",
+        "name": "pasta di questo",
         "quantity": "300",
         "unit": "gr"
       },
       {
-        "name": "carne de gato",
+        "name": "queso mozarella",
         "quantity": "500",
+        "unit": "gr"
+      },
+      {
+        "name": "nombreAddasdgs",
+        "quantity": 0,
+        "unit": "gr"
+      },
+      {
+        "name": "nombre",
+        "quantity": 0,
         "unit": "gr"
       }
     ],
     "calculatedIngredients": [
       {
-        "name": "harina",
+        "name": "pasta di questo",
         "quantity": "300",
         "unit": "gr"
       },
       {
-        "name": "carne de gato",
+        "name": "queso mozarella",
         "quantity": "500",
         "unit": "gr"
       }
     ]
+  },
+  "80c6b80e47b346d49f0e912b97bee3b1": {
+    "id": null,
+    "portions": 0,
+    "name": "nueva receta",
+    "cook_time": 0,
+    "procedure": "procedimiento",
+    "baseIngredients": [],
+    "calculatedIngredients": []
   }
 }
