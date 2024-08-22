@@ -96,3 +96,18 @@ margin-top: 15px;
 margin-top: 50px;
 
 }
+
+.categories-select, .categories-select option {
+    padding: 5px;
+    border-radius: 8px;
+
+    margin-left: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    
+    
+}
+
+.categories-select option:hover, .categories-select option:focus {
+    background: #50507b;
+}

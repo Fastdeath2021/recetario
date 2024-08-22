@@ -43,7 +43,7 @@ class Search extends React.Component {
     }
 
     updateInput(keyword) {
-        this.setState((p)=>({input: keyword}))
+        this.setState((p) => ({ input: keyword }))
     }
 
     render() {
@@ -61,22 +61,22 @@ class Search extends React.Component {
                 </div>
                 <input
                     value={this.state.input}
-                    onChange={(e) =>{
-                            this.updateInput(e.target.value);
-                        }
+                    onChange={(e) => {
+                        this.updateInput(e.target.value);
+                    }
                     }
                     onKeyDown={(e) => {
                         if (e.key == "Enter") {
-                            this.setState((p) => ({recipes: null}))
+                            this.setState((p) => ({ recipes: null }))
                         }
-                    }}  
+                    }}
                     placeholder="Que receta buscas hoy?"
                 ></input>
                 <div className="categorias">
-                    <p>Desayunos</p>
-                    <p>Almuerzos</p>
-                    <p>Cenas</p>
-                    <p>postres</p>
+                    <p onClick={(e) => this.setState((p) => ({ input: "desayuno", recipes: null }))}>Desayunos</p>
+                    <p onClick={(e) => this.setState((p) => ({ input: "almuerzo", recipes: null }))}>Almuerzos </p>
+                    <p onClick={(e) => this.setState((p) => ({ input: "cena", recipes: null }))}>Cenas</p>
+                    <p onClick={(e) => this.setState((p) => ({ input: "postre", recipes: null }))}>postres</p>
                 </div>
                 <strong className="recipesfavs">Recetas favoritas</strong>
 

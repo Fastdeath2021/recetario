@@ -80,6 +80,9 @@ def receta():
             if any ([keyword.lower() in ingredient.get("name") for ingredient in recipe.get("baseIngredients")]):
                 recipes.append(recipe)
                 continue
+            if keyword.lower() in recipe.get("category", "").lower():
+                recipes.append(recipe)
+                continue
         return recipes  
 
     return list(db.find("recipes").values())

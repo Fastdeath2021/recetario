@@ -15,6 +15,20 @@
         "quantity": 250,
         "unit": "gr"
       }
+    ],
+    "category": "postre",
+    "id": "8b778e8739d343418a750a11d14d43fb",
+    "calculatedIngredients": [
+      {
+        "name": "harina",
+        "quantity": 500,
+        "unit": "gr"
+      },
+      {
+        "name": "pollo",
+        "quantity": 250,
+        "unit": "gr"
+      }
     ]
   },
   "acc4b131cc424e6595ca5111d2b813b6": {
@@ -55,16 +69,60 @@
         "name": "queso mozarella",
         "quantity": "500",
         "unit": "gr"
+      },
+      {
+        "name": "nombreAddasdgs",
+        "quantity": 0,
+        "unit": "gr"
+      },
+      {
+        "name": "nombre",
+        "quantity": 0,
+        "unit": "gr"
       }
-    ]
+    ],
+    "category": "almuerzo"
   },
-  "80c6b80e47b346d49f0e912b97bee3b1": {
-    "id": null,
-    "portions": 0,
-    "name": "nueva receta",
-    "cook_time": 0,
-    "procedure": "procedimiento",
-    "baseIngredients": [],
-    "calculatedIngredients": []
+  "efbe2a07506a476ca37dd570b4ce541c": {
+    "portions": 1,
+    "name": "arepa de carne",
+    "cook_time": 30,
+    "procedure": "amasar, cocinar, y rellenar.",
+    "baseIngredients": [
+      {
+        "name": "Harina",
+        "quantity": 80,
+        "unit": "gr"
+      },
+      {
+        "name": "Carne mechada",
+        "quantity": 100,
+        "unit": "gr"
+      },
+      {
+        "name": "queso amarillo",
+        "quantity": 40,
+        "unit": "gr"
+      }
+    ],
+    "calculatedIngredients": [
+      {
+        "name": "Harina",
+        "quantity": 80,
+        "unit": "gr"
+      },
+      {
+        "name": "Carne mechada",
+        "quantity": 100,
+        "unit": "gr"
+      },
+      {
+        "name": "queso amarillo",
+        "quantity": 40,
+        "unit": "gr"
+      }
+    ],
+    "id": "efbe2a07506a476ca37dd570b4ce541c",
+    "category": "desayuno"
   }
 }

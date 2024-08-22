@@ -8,6 +8,7 @@ class RecipeInput extends React.Component {
     super(props);
     this.root = props.root;
     this.state = {
+      category: props.data ? props.data.category : "desayuno",
       id: props.data ? props.data.id : null,
       portions: props.data ? props.data.portions : 0,
       name: props.data ? props.data.name : "nueva receta",
@@ -90,13 +91,23 @@ class RecipeInput extends React.Component {
           <div className="receta-info">
             <img
               className="icon icon-back"
-               onClick={() => this.root.setComponent(Search, null)}
+              onClick={() => this.root.setComponent(Search, null)}
             ></img>
             <input
               className="edit-recipe-name"
               value={this.state.name}
               onChange={(e) => this.updateRecipe("name", e.target.value)}
             ></input>
+
+            <select
+              defaultValue={this.state.category}
+              className="categories-select"
+              onChange={(e) => this.updateRecipe("category", e.target.value)}>
+              <option value="desayuno">Desayuno</option>
+              <option value="almuerzo">Almuerzo</option>
+              <option value="cena">Cena</option>
+              <option value="postre">Postre</option>
+            </select>
             <div className="cook-time">
               <img className="icon icon-clock edit"></img>
               <p>tiempo de coccion</p>
@@ -120,7 +131,7 @@ class RecipeInput extends React.Component {
             <h1 className="i">Ingredientes:</h1>
             <label>Porciones</label>
             <input
-                className="portions-input"
+              className="portions-input"
               type="number"
               onChange={(e) => this.calculateIngredients(e.target.value)}
               value={this.state.portions}
@@ -135,7 +146,7 @@ class RecipeInput extends React.Component {
                 return (
                   <tr className="ingredient-row">
                     <td className="h">
-                      <input className="ingredient-name"  
+                      <input className="ingredient-name"
                         value={ingredient.name}
                         onChange={(e) =>
                           this.updateBaseIngredients(
@@ -147,7 +158,7 @@ class RecipeInput extends React.Component {
                       ></input>
                     </td>
                     <td className="h">
-                      <input 
+                      <input
                         type="number"
                         value={ingredient.quantity}
                         onChange={(e) =>

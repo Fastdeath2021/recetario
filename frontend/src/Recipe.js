@@ -1,6 +1,7 @@
 import React from "react";
 import { Search } from "./Search";
 import { RecipeInput } from "./RecipeInput";
+import "./Recipe.css"
 
 
 
@@ -9,6 +10,7 @@ class Recipe extends React.Component {
       super(props);
       this.root = props.root;
       this.state = {
+        category: props.data.category ? props.data.category : "desayuno",
         id: props.data.id,
         portions: props.data.portions,
         name: props.data.name,
@@ -64,6 +66,7 @@ class Recipe extends React.Component {
                 onClick={() => this.root.setComponent(Search, null)}
               ></img>
               <h1 className="nom">{this.state.name}</h1>
+              <p className="category-label">{this.state.category}</p>
               <button onClick={(e)=> this.root.setComponent(RecipeInput, this.state)}>modificar receta</button>
               <div className="cook-time">
                 <img className="icon icon-clock"></img>
