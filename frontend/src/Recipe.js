@@ -76,7 +76,14 @@ class Recipe extends React.Component {
               </div>
               <div className="preparacion">
                 <h1 className="mt">Metodo:</h1>
-                <p>{this.state.procedure}</p>
+                {typeof this.state.procedure == "object" &&
+                this.state.procedure.map ((step, index) => {
+                  return (
+                    <div> 
+                    <p>{index+1}. {step.content}</p>
+                    </div>
+                  )
+                })}
               </div>
             </div>
             <div className="ingredientes">

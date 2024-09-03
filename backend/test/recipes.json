@@ -3,7 +3,32 @@
     "portions": 1,
     "name": "Empanadas de Pollo",
     "cook_time": 10,
-    "procedure": "amasar rellenar y fritar",
+    "procedure": [
+      {
+        "content": "amasar la masa hasta que quede bien amasada",
+        "metadata": {
+          "type": "video"
+        }
+      },
+      {
+        "content": "hacer bolitas ",
+        "metadata": {
+          "type": "text"
+        }
+      },
+      {
+        "content": "aplastarlas y rellenar ",
+        "metadata": {
+          "type": "text"
+        }
+      },
+      {
+        "content": "fritar hasta dorar",
+        "metadata": {
+          "type": "video"
+        }
+      }
+    ],
     "baseIngredients": [
       {
         "name": "harina",

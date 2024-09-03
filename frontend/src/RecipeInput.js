@@ -19,6 +19,40 @@ class RecipeInput extends React.Component {
     };
   }
 
+  addProcedureStep(procedureType) {
+    this.setState((p) => {
+      if (typeof p.procedure == "string") {
+        return {
+          procedure: [
+            {
+              content: "",
+              metadata: {
+                type: procedureType,
+              },
+            },
+          ],
+        };
+      } else {
+        let procedure = [...p.procedure];
+        procedure.push({
+          content: "",
+          metadata: {
+            type: procedureType,
+          },
+        });
+        return {procedure: procedure}
+      }
+    });
+  }
+
+  deleteProcedureStep (index) {
+    this.setState((p) => {
+      let procedure = [...p.procedure];
+      procedure.splice(index, 1);
+      return {procedure: procedure};
+    })
+  }
+    
   deleteIngredient(index) {
     this.setState((p) => {
       let baseIngredients = [...p.baseIngredients];
@@ -102,7 +136,8 @@ class RecipeInput extends React.Component {
             <select
               defaultValue={this.state.category}
               className="categories-select"
-              onChange={(e) => this.updateRecipe("category", e.target.value)}>
+              onChange={(e) => this.updateRecipe("category", e.target.value)}
+            >
               <option value="desayuno">Desayuno</option>
               <option value="almuerzo">Almuerzo</option>
               <option value="cena">Cena</option>
@@ -121,10 +156,27 @@ class RecipeInput extends React.Component {
             </div>
             <div className="preparacion">
               <h1 className="mt">Metodo:</h1>
-              <textarea
-                value={this.state.procedure}
-                onChange={(e) => this.updateRecipe("procedure", e.target.value)}
-              ></textarea>
+              {
+                typeof this.state.procedure == "object" &&
+                this.state.procedure.map ((step, index) => {
+                  return (
+                    <div> 
+                    <input value={step.content} onChange={(e) => {
+                      this.setState((p) => {
+                        p.procedure[index].content = e.target.value;
+                        return {procedure:p.procedure}
+                      })
+                    }}></input>
+                    <button onClick={()=> this.deleteProcedureStep(index)}>borrar</button>
+                    </div>
+                  )
+                })
+              }
+              <div>
+                <button onClick={(e) => this.addProcedureStep("text")}>cuadro de texto</button>
+                <button onClick={(e) => this.addProcedureStep("video")}>clip video</button>
+                <button onClick={(e) => this.addProcedureStep("timer")}>timer</button>
+              </div>
             </div>
           </div>
           <div className="ingredientes">
@@ -146,7 +198,8 @@ class RecipeInput extends React.Component {
                 return (
                   <tr className="ingredient-row">
                     <td className="h">
-                      <input className="ingredient-name"
+                      <input
+                        className="ingredient-name"
                         value={ingredient.name}
                         onChange={(e) =>
                           this.updateBaseIngredients(
@@ -171,7 +224,8 @@ class RecipeInput extends React.Component {
                       ></input>
                     </td>
                     <td>
-                      <input className="input-unit"
+                      <input
+                        className="input-unit"
                         value={ingredient.unit}
                         onChange={(e) =>
                           this.updateBaseIngredients(
@@ -183,15 +237,19 @@ class RecipeInput extends React.Component {
                       ></input>
                     </td>
                     <td>
-                      <button className="edit-buttons"
+                      <button
+                        className="edit-buttons"
                         onClick={(e) => this.deleteIngredient(index)}
-                      >Borrar</button>
+                      >
+                        Borrar
+                      </button>
                     </td>
                   </tr>
                 );
               })}
             </table>
-            <button className="edit-buttons add"
+            <button
+              className="edit-buttons add"
               onClick={() =>
                 this.setState((p) => {
                   let baseIngredients = [...p.baseIngredients];
@@ -208,7 +266,12 @@ class RecipeInput extends React.Component {
             </button>
           </div>
         </div>
-        <button className="edit-buttons save" onClick={(e) => this.saveRecipe()}>Guardar receta</button>
+        <button
+          className="edit-buttons save"
+          onClick={(e) => this.saveRecipe()}
+        >
+          Guardar receta
+        </button>
       </div>
     );
   }
